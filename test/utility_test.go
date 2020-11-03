@@ -6,7 +6,10 @@ import (
 	"github.com/Bendomey/goutilities/pkg/calculate"
 	"github.com/Bendomey/goutilities/pkg/generatecode"
 	"github.com/Bendomey/goutilities/pkg/hashpassword"
+	"github.com/Bendomey/goutilities/pkg/signjwt"
 	"github.com/Bendomey/goutilities/pkg/validatehash"
+	"github.com/Bendomey/goutilities/pkg/validatetoken"
+	"github.com/dgrijalva/jwt-go"
 )
 
 func TestCalculate(t *testing.T) {
@@ -34,5 +37,31 @@ func TestComparePasswords(t *testing.T) {
 	isSame := validatehash.ValidateCipher(password, hash)
 	if isSame == false {
 		t.Fatal("Oops, password could not be compared")
+	}
+}
+
+func TestSignToken(t *testing.T) {
+	secretForJWT := "hello"
+	claims := jwt.MapClaims{}
+	claims["user_id"] = 1
+	_, err := signjwt.SignJWT(claims, secretForJWT)
+	if err != nil {
+		t.Fatalf("Oopsn jwt couldn't sign token :: %v", err)
+	}
+}
+
+func TestValidateToken(t *testing.T) {
+	secretForJWT := "hello"
+	claims := jwt.MapClaims{}
+	claims["user_id"] = 1
+	token, err := signjwt.SignJWT(claims, secretForJWT)
+	if err != nil {
+		t.Fatalf("Oopsn jwt couldn't sign token :: %v", err)
+	}
+
+	_, errValidate := validatetoken.ValidateJWTToken(token, secretForJWT)
+	if err != nil {
+		t.Fatalf("Oopsn jwt couldn't validate token :: %v", errValidate)
+
 	}
 }
