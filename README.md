@@ -4,7 +4,7 @@ package for utilities you can find your hands on when creating a server
 
 ## Utilities Listings
 
-- Generate Random
+- Generate Random :thumbsup:
 - Hash Password
 - Compare Hash Passwords
 - Generate JWT Cipher

@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/Bendomey/goutilities/pkg/generatecode"
+)
 
 func main() {
-	fmt.Println("Hello owlrd")
+	fmt.Println("my length ::", 6, "code generated :: ", generatecode.GenerateCode(6), "length :: ", len(generatecode.GenerateCode(6)))
 }
