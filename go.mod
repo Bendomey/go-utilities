@@ -2,4 +2,7 @@ module github.com/Bendomey/goutilities
 
 go 1.15
 
-require golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897
+require (
+	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897
+)
