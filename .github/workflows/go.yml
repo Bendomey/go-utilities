@@ -36,4 +36,4 @@ jobs:
           fi
 
       - name: Test
-        run: go test-and-exit -v -race $(go list ./... | grep -v vendor)
+        run: make test-and-exit -v -race $(go list ./... | grep -v vendor)
