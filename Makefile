@@ -1,8 +1,8 @@
 run:
-	go run cmd/go-utilites/main.go
+	reflex -r '\.go' -s -- sh -c "go run cmd/goutilites/main.go"
 
 test:
-	go run 
+	go test github.com/Bendomey/goutilities/test
 
 build:
 	go build
