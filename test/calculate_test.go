@@ -3,7 +3,7 @@ package test
 import (
 	"testing"
 
-	"github.com/Bendomey/goutilities/internal/calculate"
+	"github.com/Bendomey/goutilities/pkg/calculate"
 )
 
 func TestCalculate(t *testing.T) {
