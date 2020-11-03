@@ -60,7 +60,7 @@ func TestValidateToken(t *testing.T) {
 	}
 
 	_, errValidate := validatetoken.ValidateJWTToken(token, secretForJWT)
-	if err != nil {
+	if errValidate != nil {
 		t.Fatalf("Oopsn jwt couldn't validate token :: %v", errValidate)
 
 	}
