@@ -9,3 +9,4 @@ package for utilities you need when creating a server
 - Compare Hash Passwords :thumbsup:
 - Generate JWT Cipher :thumbsup:
 - Validate JWT Cipher :thumbsup:
+- Fetch Api :thumbsup:
